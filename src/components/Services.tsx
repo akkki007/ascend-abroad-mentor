@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Briefcase, GraduationCap, Brain, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -8,19 +9,22 @@ const Services = () => {
       icon: <Briefcase className="h-8 w-8" />,
       title: "Career Placements",
       description: "Connect with top employers across Middle Eastern countries. We specialize in matching talented professionals with opportunities in UAE, Saudi Arabia, Qatar, and more.",
-      features: ["Resume Optimization", "Interview Preparation", "Visa Assistance", "Salary Negotiation"]
+      features: ["Resume Optimization", "Interview Preparation", "Visa Assistance", "Salary Negotiation"],
+      link: "/services/career-placements"
     },
     {
       icon: <GraduationCap className="h-8 w-8" />,
       title: "Foreign Education",
       description: "Navigate your study abroad journey with expert guidance. From university selection to visa processing, we ensure your educational dreams become reality.",
-      features: ["University Selection", "Application Support", "Scholarship Guidance", "Student Visa Processing"]
+      features: ["University Selection", "Application Support", "Scholarship Guidance", "Student Visa Processing"],
+      link: "/services/foreign-education"
     },
     {
       icon: <Brain className="h-8 w-8" />,
       title: "Student Mentoring",
       description: "Comprehensive support including psychometric testing, career counseling, and skill development to prepare you for global success.",
-      features: ["Psychometric Testing", "Career Counseling", "Skill Assessment", "Personal Development Plans"]
+      features: ["Psychometric Testing", "Career Counseling", "Skill Assessment", "Personal Development Plans"],
+      link: "/services/student-mentoring"
     }
   ];
 
@@ -50,10 +54,12 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" className="w-full group">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <Link to={service.link}>
+                <Button variant="outline" className="w-full group">
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </Card>
           ))}
         </div>

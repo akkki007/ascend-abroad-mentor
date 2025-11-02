@@ -8,7 +8,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-background text-foreground rounded-lg flex items-center justify-center">
                 <span className="font-bold text-lg">P</span>
               </div>
-              <span className="text-xl font-bold">PlaceEd</span>
+              <span className="text-xl font-bold">COC Placements</span>
             </div>
             <p className="text-background/80 text-sm">
               Empowering students and professionals to achieve their global career and education dreams.
@@ -48,7 +48,7 @@ const Footer = () => {
         
         <div className="border-t border-background/20 mt-8 pt-8 text-center">
           <p className="text-background/60 text-sm">
-            © 2024 PlaceEd. All rights reserved.
+            © 2024 COC Placements. All rights reserved.
           </p>
         </div>
       </div>

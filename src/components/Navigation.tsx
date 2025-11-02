@@ -12,11 +12,8 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">P</span>
-            </div>
-            <span className="text-xl font-bold">PlaceEd</span>
+          <div className="flex items-center space-x-2"> 
+            <span className="text-xl font-bold">COC Placements</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-2">
@@ -34,7 +31,7 @@ const Navigation = () => {
           
           <div className="flex items-center space-x-3">
             <Button variant="ghost" size="sm">
-              Sign In
+              Call Now
             </Button>
             <Button variant="hero" size="sm">
               Get Started
