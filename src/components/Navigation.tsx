@@ -30,8 +30,10 @@ const Navigation = () => {
           </div>
           
           <div className="flex items-center space-x-3">
-            <Button variant="ghost" size="sm">
-              Call Now
+            <Button variant="ghost" size="sm" asChild>
+              <a href="tel:+919764001584" aria-label="Call COC Placements">
+                Call Now
+              </a>
             </Button>
             <Button variant="hero" size="sm">
               Get Started
