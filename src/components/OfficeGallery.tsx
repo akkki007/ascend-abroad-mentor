@@ -25,36 +25,34 @@ const officeImages = [
 
 const OfficeGallery = () => {
   return (
-    <section className="py-24 bg-background" id="gallery">
+    <section className="py-20 lg:py-28 bg-background" id="gallery">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">
-            Inside Our Office
-          </p>
+        {/* Section header */}
+        <div className="text-center mb-14 lg:mb-16">
+          <div className="section-divider" />
           <h2 className="heading-text mb-4">Gallery: A Day at COC</h2>
-          <p className="text-muted-foreground">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
             Peek into the everyday atmosphere that shapes our mentoring ethos.
-            From onboarding tables to the lounge where career roadmaps are
-            crafted, each corner is designed for clarity and calm.
+            Each corner is designed for clarity and calm.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2 stagger-children">
           {officeImages.map((image) => (
             <Card
               key={image.src}
-              className="overflow-hidden border border-border/60 shadow-lg backdrop-blur bg-card/80"
+              className="overflow-hidden border-0 card-shadow rounded-2xl group"
             >
-              <div className="relative group">
+              <div className="relative">
                 <img
                   src={encodeURI(image.src)}
                   alt={image.label}
-                  className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="h-64 lg:h-80 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-lg font-semibold text-white">
+                  <p className="text-lg font-display font-semibold text-white mb-1">
                     {image.label}
                   </p>
                   <p className="text-sm text-white/80">{image.description}</p>
@@ -69,4 +67,3 @@ const OfficeGallery = () => {
 };
 
 export default OfficeGallery;
-

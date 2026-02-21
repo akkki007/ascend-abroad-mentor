@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face{
-  font-family: "Poppins";
-  src:local("Poppins"),
-  url('./assets/fonts/Poppins/Poppins-Regular.ttf') 
-}
-
 @layer base {
   :root {
     /* Main background - clean white */
@@ -47,32 +41,25 @@
     --hero-gradient-end: 212 100% 35%;
     --section-bg: 35 50% 98%;
     --card-shadow: 212 30% 20%;
-    
+
     /* Typography scales */
-    --font-hero: 3.5rem;
-    --font-heading: 2.5rem;
+    --font-hero: 4rem;
+    --font-heading: 2.75rem;
     --font-subheading: 1.5rem;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -129,12 +116,22 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Custom font classes */
+  .font-display {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   /* Custom utility classes */
@@ -147,24 +144,117 @@
   }
 
   .card-shadow {
-    box-shadow: 0 4px 20px -2px hsl(var(--card-shadow) / 0.1);
+    box-shadow: 0 4px 24px -4px hsl(var(--card-shadow) / 0.08);
+  }
+
+  .card-shadow-lg {
+    box-shadow: 0 8px 40px -8px hsl(var(--card-shadow) / 0.12);
   }
 
   .hero-text {
-    font-size: clamp(2.5rem, 8vw, var(--font-hero));
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    font-size: clamp(2.75rem, 8vw, var(--font-hero));
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
   }
 
   .heading-text {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
     font-size: clamp(2rem, 6vw, var(--font-heading));
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
   }
 
   .subheading-text {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
     font-size: clamp(1.25rem, 4vw, var(--font-subheading));
     font-weight: 600;
     line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply w-16 h-1 bg-primary rounded-full mx-auto mb-6;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-xl;
+  }
+
+  /* Fade in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  /* Stagger children */
+  .stagger-children > * {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .stagger-children > *:nth-child(1) { animation-delay: 0s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.2s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.3s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.4s; }
+  .stagger-children > *:nth-child(6) { animation-delay: 0.5s; }
+
+  /* Smooth image loading */
+  img {
+    @apply transition-opacity duration-300;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
   }
 }
